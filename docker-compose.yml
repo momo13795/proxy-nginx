@@ -1,0 +1,18 @@
+version: "3"
+
+networks:
+  default:
+    external:
+      name: proxy-network
+
+services:
+  nginx:
+    build:
+      context: ./nginx
+    volumes:
+      - ./logs:/var/log/nginx
+      - ./sites:/etc/nginx/sites-available
+      - ./ssl:/etc/nginx/ssl
+    ports:
+      - "80:80"
+      - "443:443"
