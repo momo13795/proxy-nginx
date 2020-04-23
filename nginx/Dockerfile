@@ -10,14 +10,14 @@ RUN apk update \
     && apk add --no-cache bash
 
 #添加专属用户www-data
-RUN set -x ;
+RUN set -x ; \
     groupadd -g 82 -S www-data ; \
     useradd -u 82 -D -S -G www-data www-data && exit 0 ; exit 1
 
-ADD ./startup.sh /opt/startup.sh
+#ADD ./startup.sh /opt/startup.sh
 
-RUN sed -i 's/.//g' /opt/startup.sh
+#RUN sed -i 's/.//g' /opt/startup.sh
 
-CMD ["/bin/bash", "/opt/startup.sh"]
+#CMD ["/bin/bash", "/opt/startup.sh"]
 
 EXPOSE 80 443

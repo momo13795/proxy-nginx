@@ -1,0 +1,36 @@
+version: '3'
+
+networks:
+  proxy:
+    external:
+       name: ${PROXY_NETWORK_NAME}
+  backend:
+    driver: ${NETWORKS_DRIVER}
+
+services:
+ php-fpm:
+      build:
+        context: ./php-fpm
+      volumes:
+        - ./php-fpm/php.ini:/usr/local/etc/php/php.ini
+        - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
+      networks:
+        - backend
+
+ nginx:
+      build:
+        context: ./nginx
+        args:
+          - PHP_UPSTREAM_CONTAINER=${NGINX_PHP_UPSTREAM_CONTAINER}
+          - PHP_UPSTREAM_PORT=${NGINX_PHP_UPSTREAM_PORT}
+      volumes:
+        - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
+        - ./log:/var/log/nginx
+        - ./sites:/etc/nginx/sites-available
+        - ./ssl:/etc/nginx/ssl
+      container_name: ${COMPOSE_PROJECT_NAME}_nginx
+      depends_on:
+        - php-fpm
+      networks:
+        - proxy
+        - backend
