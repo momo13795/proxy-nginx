@@ -11,8 +11,8 @@ RUN apk update \
 
 #添加专属用户www-data
 RUN set -x ; \
-    groupadd -g 82 -S www-data ; \
-    useradd -u 82 -D -S -G www-data www-data && exit 0 ; exit 1
+    addgroup -g 82 -S www-data ; \
+    adduser -u 82 -D -S -G www-data www-data && exit 0 ; exit 1
 
 #ADD ./startup.sh /opt/startup.sh
 
