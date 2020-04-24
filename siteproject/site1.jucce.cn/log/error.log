@@ -1,0 +1,14 @@
+2020/04/24 01:47:45 [emerg] 1#1: no "events" section in configuration
+2020/04/24 01:50:41 [emerg] 1#1: no "events" section in configuration
+2020/04/24 01:56:33 [emerg] 1#1: invalid port in upstream ":" in /etc/nginx/conf.d/upstream.conf:1
+2020/04/24 02:15:36 [emerg] 1#1: invalid port in upstream ":" in /etc/nginx/conf.d/upstream.conf:1
+2020/04/24 02:17:35 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/3243258_baipiaoquan.com.pem": BIO_new_file() failed (SSL: error:02001002:system library:fopen:No such file or directory:fopen('/etc/nginx/ssl/3243258_baipiaoquan.com.pem','r') error:2006D080:BIO routines:BIO_new_file:no such file)
+2020/04/24 02:19:58 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/3243258_baipiaoquan.com.pem": BIO_new_file() failed (SSL: error:02001002:system library:fopen:No such file or directory:fopen('/etc/nginx/ssl/3243258_baipiaoquan.com.pem','r') error:2006D080:BIO routines:BIO_new_file:no such file)
+2020/04/24 02:26:38 [emerg] 45#45: bind() to 0.0.0.0:80 failed (98: Address in use)
+2020/04/24 02:26:38 [emerg] 45#45: bind() to 0.0.0.0:80 failed (98: Address in use)
+2020/04/24 02:26:38 [emerg] 45#45: bind() to 0.0.0.0:80 failed (98: Address in use)
+2020/04/24 02:26:38 [emerg] 45#45: bind() to 0.0.0.0:80 failed (98: Address in use)
+2020/04/24 02:26:38 [emerg] 45#45: bind() to 0.0.0.0:80 failed (98: Address in use)
+2020/04/24 02:26:38 [emerg] 45#45: still could not bind()
+2020/04/24 02:26:48 [notice] 46#46: signal process started
+2020/04/24 02:27:45 [notice] 54#54: signal process started
